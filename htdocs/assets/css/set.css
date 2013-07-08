@@ -1,0 +1,94 @@
+#config-containers {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+    #config-containers .ui-selecting {
+    }
+    #config-containers .ui-selected {
+        background-color: white;
+        color: black;
+        border: 1px solid white;
+    }
+    #config-containers li {
+        width: 50px;
+        height: 150px;
+        margin: 10px;
+        border: 1px solid black;
+
+        border-radius: 6px;
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+    }
+    #config-containers li:hover {
+        border: 1px solid white;
+    }
+    #config-containers li .label {
+        position: absolute;
+        font-size: 2em;
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+    }
+    #config-containers li#tab-off span { margin: 110px 0 0 5px; }
+    #config-containers li#tab-solid span { margin: 98px 0 0 -8px; }
+    #config-containers li#tab-pulse span { margin: 93px 0 0 -13px; }
+    #config-containers li#tab-dual span { margin: 100px 0 0 -7px; }
+    #config-containers li#tab-multi span { margin: 97px 0 0 -7px; }
+
+.properties {
+    border: 1px solid white;
+    background: rgba(255, 255, 255, 0.2);
+    display: none;
+    position: absolute;
+    width: 600px;
+    height: 413px;
+    margin: 10px 0 0 100px;
+    padding: 30px;
+}
+    .properties label {
+        width: 60px;
+        display: inline-block;
+    }
+    .properties input {
+    }
+    .properties input.color {
+        width: 30px;
+    }
+    .properties.show {
+        display: inline-block;
+    }
+
+#pulse-wait, #pulse-hold, #dual-wait, #dual-hold, #multi-wait, #multi-hold {
+    display: inline-block;
+    width: 500px;
+}
+
+.swatch {
+    float: right;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    border: 1px solid black;
+    background: none;
+    margin-top: -20px;
+}
+
+.color-slider-wrap {
+    margin: 15px 0px;
+}
+.color-slider {
+    width: 300px;
+    display: inline-block;
+}
+.red .ui-slider-range { background: #ef2929; }
+.red .ui-slider-handle { border-color: #ef2929; }
+.green .ui-slider-range { background: #8ae234; }
+.green .ui-slider-handle { border-color: #8ae234; }
+.blue .ui-slider-range { background: #729fcf; }
+.blue .ui-slider-handle { border-color: #729fcf; }
+
+.pull-left {
+    display: inline-block;
+    float: left;
+}

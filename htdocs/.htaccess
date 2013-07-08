@@ -1,0 +1,17 @@
+Options +FollowSymLinks -Indexes
+ErrorDocument 403 "Not found"
+ErrorDocument 404 "Not found"
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+#RewriteCond %{HTTP_HOST} !^www\.
+#RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+RewriteRule ^([a-z]+)/?$    $1.php  [L,NC,QSA]
+</IfModule>
+<IfModule mod_php5.c>
+php_value include_path "/home/pi/www/chandelier/phplib"
+php_value error_reporting 0
+</IfModule>

@@ -1,0 +1,65 @@
+html, body, h1, h2, h3, img, span, div, label {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font: normal 12px Helvetica, Arial, Verdana, sans-serif;
+    font-size: 100%;
+    line-height: 1em;
+    background-color: #000;
+    color: #FFF;
+
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-image: url('/assets/lantern3.png');
+}
+h1, h2, h3 {
+    margin: 0.6em 0;
+}
+img {
+    border: none;
+}
+a:link {
+    color: #FFF;
+    text-decoration: none;
+}
+a:hover {
+    color: #FFF;
+    text-decoration: underline;
+}
+a:visited {
+    color: #FFF;
+    text-decoration: none;
+}
+a:active{
+    color: #FFF;
+    text-decoration: underline;
+}
+button {
+    -webkit-appearance: button;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* parts of the page */
+#header {
+    top: 0;
+    left: 0;
+    margin: 40px 20px;
+    width: 90%;
+    font-size: 4em;
+}
+#colorbar {
+    width: 100%;
+    display: inline-block;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#content {
+    margin: 40px 20px;
+}
