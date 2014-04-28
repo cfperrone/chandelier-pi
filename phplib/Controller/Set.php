@@ -118,5 +118,7 @@ class Controller_Set extends Controller_Base {
             echo "turning off";
             $proc->runFunction('off');
         }
+
+        $this->response->sendJSON(array('result' => 'success'));
     }
 }
