@@ -35,13 +35,13 @@ while(true) {
     for ($j = 100; $j >= 0; $j--) {
         $value = pow(((float)$j)/100, 2);
 
-        $red_value = $value * (((float)$pulse_rgb['red'])/255);
-        $green_value = $value * (((float)$pulse_rgb['green'])/255);
-        $blue_value = $value * (((float)$pulse_rgb['blue'])/255);
+        $arr = array(
+            $pin_red => $value * (((float)$pulse_rgb['red'])/255),
+            $pin_green => $value * (((float)$pulse_rgb['green'])/255),
+            $pin_blue => $value * (((float)$pulse_rgb['blue'])/255),
+        );
 
-        $pwm->writePin($pin_red, $red_value);
-        $pwm->writePin($pin_green, $green_value);
-        $pwm->writePin($pin_blue, $blue_value);
+        $pwn->writePinMultiple($arr);
 
         usleep($sleep_time);
     }

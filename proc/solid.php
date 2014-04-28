@@ -18,9 +18,13 @@ while (true) {
     $green_value = (((float)$solid_rgb['green'])/255);
     $blue_value = (((float)$solid_rgb['blue'])/255);
 
-    $pwm->writePin($pin_red, $red_value);
-    $pwm->writePin($pin_green, $green_value);
-    $pwm->writePin($pin_blue, $blue_value);
+    $arr = array(
+        $pin_red => $red_value,
+        $pin_green => $green_value,
+        $pin_blue => $blue_value,
+    );
+
+    $pwm->writePinMultiple($arr);
 
     sleep(1);
 }
