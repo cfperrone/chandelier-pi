@@ -30,9 +30,9 @@ class Config {
             'available_functions' => array('off', 'solid', 'pulse', 'dual', 'multi', 'time'),
             'function' => 'off',
 
-            'pin_red' => 1,
-            'pin_green' => 2,
-            'pin_blue' => 4,
+            'pin_red' => 4,
+            'pin_green' => 17,
+            'pin_blue' => 18,
         );
         $this->setArray($config);
     }

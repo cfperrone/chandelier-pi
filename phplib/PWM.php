@@ -4,18 +4,19 @@ class PWM {
 
     // the PWM output file. this should be writeable already
     const PWM_FILE = "/dev/pi-blaster";
-    const PIN_MIN = 0;
-    const PIN_MAX = 7;
+
+    const PIN_MIN = 4;
+    const PIN_MAX = 25;
     const VALUE_MIN = 0;
     const VALUE_MAX = 1;
-    const MOSFET_TYPE = 'p';
+    const MOSFET_TYPE = 'n';
 
-    private $validPins = array(1, 2, 4);
+    private $validPins = array(4, 17, 18);
 
     public function __construct($pinArr=null) {
         // set an array of valid pins either passed in or default
         if (!$pinArr || !is_array($pinArr)) {
-            $this->validPins = array(1, 2, 4);
+            $this->validPins = array(4, 17, 18);
         } else {
             $this->validPins = $pinArr;
         }
@@ -71,9 +72,9 @@ class PWM {
      **/
     private static function write($pin, $value) {
         if (self::MOSFET_TYPE == 'p') {
-            $outstring = $pin . "=" . (1 - $value) . "\n";
+            $outstring = $pin . "=" . (1 - $value);
         } else {
-            $outstring = $pin . "=" . $value . "\n";
+            $outstring = $pin . "=" . $value;
         }
 
         /* apparently we can't write to a fifo buffer like this in php. */
@@ -91,14 +92,15 @@ class PWM {
         exec("echo \"$outstring\" > " . self::PWM_FILE);
     }
     private static function writeMultiple($arr) {
-        $outstring = "";
+        $outstrings = "";
         foreach ($arr as $pin=>$value) {
             if (self::MOSFET_TYPE == 'p') {
-                $outstring .= $pin . "=" . (1 - $value) . "\n";
+                $outstrings[] = $pin . "=" . (1 - $value);
             } else {
-                $outstring .= $pin . "=" . $value . "\n";
+                $outstrings[] = $pin . "=" . $value;
             }
         }
+        $outstring = implode("\n", $outstrings);
 
         exec("echo \"$outstring\" > " . self::PWM_FILE);
     }
